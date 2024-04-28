@@ -3,6 +3,7 @@ import { Button } from "antd";
 import '../css_admin/Matricula.css';
 import axios from 'axios';
 import Formulario from '../../user/pages/Formulario';
+import QRCode from 'qrcode.react';
 
 export default function Matricula() {
 
@@ -34,16 +35,31 @@ export default function Matricula() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            const QRCode= generarQR(formData);
             await axios.post('https://api-rest-htj4.onrender.com/api/saveData', formData);
             console.log('Datos enviados correctamente');
             e.target.reset();
+            document.getElementById('codigo-qr').innerHTML=" "
+
         } catch (error) {
             console.error('Error al enviar los datos', error);
             // Mostrar mensaje de error al usuario
         }
     };
 
+        const generarQR = (formData) => {
 
+            const qrData = [];
+            for (const campo in formData) {
+                const nombreCampo = campo;
+                const valorCampo = formData[campo];
+                qrData.push(`${nombreCampo}= ${valorCampo}`);
+            }
+            const qrValue = qrData.join('\n');
+            return <QRCode value={qrValue} />;
+        };
+    
+    
    
    
     return (
@@ -152,13 +168,13 @@ export default function Matricula() {
                     </div>
                 
                 
-                
-                <div className='qr'>
-                    Generador de Qr
-                </div>
                 <Button type="primary" htmlType="submit" className="boton1" >enviar</Button>
             </form>}
-
+            {formData.roles&&(
+                <div className='qr'>
+            {generarQR(formData) 
+       }       </div>)
+             } 
         </div>
     )
 }

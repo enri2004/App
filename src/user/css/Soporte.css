@@ -4,7 +4,7 @@
     justify-content: space-around;
     align-items: center;
     top: 0cap;
-    height: 50vh;
+    height: 60vh;
   }
   
   .form {
@@ -18,7 +18,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     z-index: 1; /* Asegura que el formulario esté por encima de las barras */
     width: 70%;
-    height:50%;
+    height:70%;
   }
   
   
