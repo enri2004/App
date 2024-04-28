@@ -116,6 +116,11 @@ export default function Soporte() {
 </form>
 
             )}
+
+            <Modal>
+                <ModalHeader>mensaje</ModalHeader>
+                <ModalBody></ModalBody>
+            </Modal>
         </div>
     );
 }
