@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import '../css/Soporte.css'
 import { FaLifeRing, FaKey } from 'react-icons/fa'; 
-
+import {Modal,ModalBody,ModalFooter,ModalHeader,Button} from 'reactstrap'
 
 export default function Soporte() {
     const [mostrarFormularioSoporte, setMostrarFormularioSoporte] = useState(false);
