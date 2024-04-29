@@ -6,7 +6,7 @@ import {Modal,ModalBody,ModalHeader,Button} from 'reactstrap'
 export default function Soporte() {
     const [mostrarFormularioSoporte, setMostrarFormularioSoporte] = useState(false);
     const [mostrarFormularioRecuperar, setMostrarFormularioRecuperar] = useState(false);
-    const [mensaje, setMensaje]= useState(false);
+  
 
     const toggleFormularioSoporte = () => {
         setMostrarFormularioSoporte(!mostrarFormularioSoporte);
