@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import '../css/Soporte.css'
 import { FaLifeRing, FaKey } from 'react-icons/fa'; 
-import {Modal,ModalBody,ModalFooter,ModalHeader,Button} from 'reactstrap'
+import {Modal,ModalBody,ModalHeader,Button} from 'reactstrap'
 
 export default function Soporte() {
     const [mostrarFormularioSoporte, setMostrarFormularioSoporte] = useState(false);
     const [mostrarFormularioRecuperar, setMostrarFormularioRecuperar] = useState(false);
+    const [mensaje, setMensaje]= useState(false);
 
     const toggleFormularioSoporte = () => {
         setMostrarFormularioSoporte(!mostrarFormularioSoporte);
@@ -17,8 +18,9 @@ export default function Soporte() {
         setMostrarFormularioSoporte(false); // Oculta el otro formulario
     };
 
-    const mostrarModalMensaje=()=>{
-     
+    const toggleModal=()=>{
+        setMensaje(!mensaje);
+        console.log("mmmmm")
       }
 
     return (
@@ -112,19 +114,22 @@ export default function Soporte() {
 
 
                     <div class="col-12">
-                      <button class="btn btn-primary" type="submit" onClick={()=>this.mostrarModalMensaje}>Recuperar</button>
+                      <Button class="btn btn-primary"  onClick={()=>toggleModal}>Recuperar</Button>
                     </div>
                   </form>
+                  <Modal isOpen={mensaje} toggle={toggleModal} className="modal-custom" style={{position:"absolute", background:"black", top:"0px"}}>
+                  <ModalHeader  toggle={toggleModal}>
+                    <ModalBody>
 
+                    </ModalBody>
+                  </ModalHeader>
+            </Modal>
+      
                     
 </form>
 
             )}
 
-            <Modal>
-                <ModalHeader>mensaje</ModalHeader>
-                <ModalBody></ModalBody>
-            </Modal>
-        </div>
+              </div>
     );
 }
