@@ -18,10 +18,7 @@ export default function Soporte() {
         setMostrarFormularioSoporte(false); // Oculta el otro formulario
     };
 
-    const toggleModal=()=>{
-        setMensaje(!mensaje);
-        console.log("mmmmm")
-      }
+    
 
     return (
         <div className="contenedor">
