@@ -17,8 +17,8 @@ export default function Soporte() {
         setMostrarFormularioSoporte(false); // Oculta el otro formulario
     };
 
-    mostrarModalMensaje=()=>{
-        this.setState({modalMensaje: true});
+    const mostrarModalMensaje=()=>{
+     
       }
 
     return (
