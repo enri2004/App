@@ -17,6 +17,10 @@ export default function Soporte() {
         setMostrarFormularioSoporte(false); // Oculta el otro formulario
     };
 
+    mostrarModalMensaje=()=>{
+        this.setState({modalMensaje: true});
+      }
+
     return (
         <div className="contenedor">
             <div className="barra1" onClick={toggleFormularioSoporte}>
@@ -108,7 +112,7 @@ export default function Soporte() {
 
 
                     <div class="col-12">
-                      <button class="btn btn-primary" type="submit">Recuperar</button>
+                      <button class="btn btn-primary" type="submit" onClick={()=>this.mostrarModalMensaje}>Recuperar</button>
                     </div>
                   </form>
 
